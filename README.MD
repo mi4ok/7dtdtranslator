@@ -1,3 +1,4 @@
+[README_EN](./README_EN.MD)
 
 # 7 Days to Die Translator
 
