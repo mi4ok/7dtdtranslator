@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📄 7 Days to Die Translator</h1>
+        <div class="controls">
+            <div class="control-group">
+                <label for="languageSelect">🌐 Select Language</label>
+                <select id="languageSelect">
+                    <option value="ru">Russian</option>
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="modelSelect">🤖 Select Model</label>
+                <select id="modelSelect">
+                    <option value="gpt-4o">GPT-4O</option>
+                    <option value="gpt-4o-mini">GPT-4O Mini</option>
+                    <option value="gpt-4-turbo">GPT-4 Turbo</option>
+                    <option value="o1-preview">O1 Preview</option>
+                    <option value="o1-mini">O1 Mini</option>
+                    <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="keyInput">🔑 API Key</label>
+                <input type="text" id="keyInput" placeholder="Enter your API key">
+            </div>
+            
+            <div class="prompt-container">
+                <label for="promptInput">🖊️ Custom Prompt</label>
+                <textarea id="promptInput" placeholder="Enter your custom prompt here">Просто переведи следующий после двоеточия текст на {language} язык. Контекст - игра 7 days to die. Не нужно переводить что-то подобное [(((ColourModded)))] и прочее. Пример вместо [(((ColourModded)))]Counterfeit Old Cash[-] ты должен перевести как [(((ColourModded)))]Фальшивые старые деньги[-] ничего не удаляя и не добавляя лишний текст: </textarea>
+                <div class="hint-text">
+                    Use <code>{language}</code> to insert the selected language. Example: "Translate the text to {language} language."
+                </div>
+            </div>
+            
+            <div class="file-input-container">
+                <label for="csvFileInput">📁 Choose a file or drag it here</label>
+                <input type="file" id="csvFileInput" accept=".txt">
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <table id="csvTable"></table>
+        </div>
+    </div>
+    
+    <button class="floating-save-button" onclick="downloadCSV()">💾</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
